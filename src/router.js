@@ -9,6 +9,6 @@ const router = express.Router();
 router.use(paymentController.enableCors);
 router.use('/up', expressHealthcheck());
 router.post('/payment/make', paymentController.makePayment);
-
+router.post('/payment/transaction/create', paymentController.createTxn);
 
 module.exports = router;

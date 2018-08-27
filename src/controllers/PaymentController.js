@@ -31,8 +31,35 @@ const makePayment = (req, res) => {
     });
 }
 
+const createTxn = (req, res) => {
+    const {
+        userId,
+        orderId,
+        status
+    } = req.body;
+
+    PaymentSvc.createTxn(userId, orderId, status)
+        .then((txn) => {
+            if (txn) {
+                return res.send({
+                    transaction: txn
+                });
+
+            }
+            return res.send(500);
+        })
+        .catch(err => handleError(err, res));
+}
+
+const handleError = (err, res) => {
+    console.error(err);
+    return res.send(500);
+}
+
+
 
 module.exports = {
     enableCors,
-    makePayment
+    makePayment,
+    createTxn
 }

@@ -1,4 +1,5 @@
 const config = require('../config');
+const Transaction = require('../models/transaction');
 
 
 const checkPayment = (creditCard) => {
@@ -21,8 +22,20 @@ const checkPayment = (creditCard) => {
 
 }
 
+const createTxn = (userId, orderId, status) => {
+    const txn = new Transaction({
+        userId: userId,
+        orderId: orderId,
+        status: status,
+        createdAt: moment().format()
+    });
+
+    return txn.Save();
+}
+
 
 module.exports = {
-    checkPayment
+    checkPayment,
+    createTxn
 
 }
