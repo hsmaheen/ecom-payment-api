@@ -1,5 +1,7 @@
 const config = require('../config');
 const Transaction = require('../models/transaction');
+const moment = require('moment');
+
 
 
 const checkPayment = (creditCard) => {
@@ -30,7 +32,7 @@ const createTxn = (userId, orderId, status) => {
         createdAt: moment().format()
     });
 
-    return txn.Save();
+    return txn.save();
 }
 
 
