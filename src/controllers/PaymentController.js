@@ -31,6 +31,7 @@ const makePayment = (req, res) => {
     });
 }
 
+//Create Txn for payment
 const createTxn = (req, res) => {
     const {
         userId,

@@ -13,7 +13,7 @@ const checkPayment = (creditCard) => {
     } = creditCard;
 
     if ((nameOnCard === 'Maheen Heera Syed') &&
-        (creditCardNumber === 12345) &&
+        (creditCardNumber === 4678123478945623) &&
         (expiration === 102018) &&
         (cvv === 295)) {
         return true;
