@@ -12,7 +12,7 @@ const checkPayment = (creditCard) => {
         cvv
     } = creditCard;
 
-    if ((nameOnCard === 'Maheen Heera Syed') &&
+    if ((nameOnCard === 'Simon') &&
         (creditCardNumber === 4678123478945623) &&
         (expiration === 102018) &&
         (cvv === 295)) {
